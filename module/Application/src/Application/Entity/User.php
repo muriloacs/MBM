@@ -16,24 +16,19 @@ class User
     */
     protected $id;
 
-    /** 
-     * @ORM\Column(type="string") 
-     */
-    protected $username;
-
-    /** 
+    /**
      * @ORM\Column(type="string") 
      */
     protected $email;
 
+    /**
+     * @ORM\Column(type="string")
+     */
+    protected $password;
+
     public function getId()
     {
         return $this->id;
-    }
-
-    public function getUsername()
-    {
-        return $this->username;
     }
 
     public function getEmail()
@@ -41,13 +36,18 @@ class User
         return $this->email;
     }
 
-    public function setUsername($username)
+    public function getPassword()
     {
-        $this->username = $username;
+        return $this->password;
     }
 
     public function setEmail($email)
     {
         $this->email = $email;
+    }
+
+    public function setPassword($password)
+    {
+        $this->password = $password;
     }
 }
