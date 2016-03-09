@@ -7,7 +7,8 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Entity(repositoryClass="Application\Repository\UserRepository") 
  * @ORM\Table(name="user")
  */
-class User {
+class User
+{
     /**
     * @ORM\Id
     * @ORM\GeneratedValue(strategy="AUTO")
@@ -25,23 +26,28 @@ class User {
      */
     protected $email;
 
-    public function getId() {
+    public function getId()
+    {
         return $this->id;
     }
 
-    public function getUsername() {
+    public function getUsername()
+    {
         return $this->username;
     }
 
-    public function getEmail() {
+    public function getEmail()
+    {
         return $this->email;
     }
 
-    public function setUsername($username) {
+    public function setUsername($username)
+    {
         $this->username = $username;
     }
 
-    public function setEmail($email) {
+    public function setEmail($email)
+    {
         $this->email = $email;
     }
 }

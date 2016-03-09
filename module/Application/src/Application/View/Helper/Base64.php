@@ -10,7 +10,7 @@ class Base64 extends AbstractHelper
         $helper = new IsExternalLink();
         $external = $helper->__invoke($pictureUrl);
         
-        if(!$external){
+        if (!$external) {
             // Current module
             $module = ucfirst(strstr(substr($pictureUrl, 1), '/', true));
             // Picture file full path
@@ -18,9 +18,10 @@ class Base64 extends AbstractHelper
             // Base64 encode
             $base64 = base64_encode(file_get_contents($picturePath));
         }
-        else{
+        else {
             $base64 = base64_encode(file_get_contents($pictureUrl));
         }
+
         // Picture file extension
         $extension = pathinfo($pictureUrl, PATHINFO_EXTENSION);
         // Base64 data

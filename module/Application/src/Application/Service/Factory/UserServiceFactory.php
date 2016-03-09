@@ -5,9 +5,10 @@ use Zend\ServiceManager\FactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
 use Zend\Di\Di;
 
-class UserServiceFactory implements FactoryInterface{
-    
-    public function createService(ServiceLocatorInterface $serviceLocator) {
+class UserServiceFactory implements FactoryInterface
+{
+    public function createService(ServiceLocatorInterface $serviceLocator)
+    {
         // Setting dependencies
         $entityManager = $serviceLocator->get('Doctrine\ORM\EntityManager');
         $userRepository = $entityManager->getRepository('Application\Entity\User');
@@ -21,5 +22,4 @@ class UserServiceFactory implements FactoryInterface{
         // Returning instance
         return $di->get('Application\Service\UserService');
     }
-
 }

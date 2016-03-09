@@ -13,7 +13,8 @@ class UserController extends AbstractActionController
         $this->userService = $userService;
     }  
     
-    public function loginAction() {
+    public function loginAction()
+    {
         $loggedIn = $this->userService->login();
         
         return array(
@@ -21,12 +22,12 @@ class UserController extends AbstractActionController
         );
     }
 
-    public function logoutAction() {
+    public function logoutAction()
+    {
         $loggedOut = $this->userService->logout();
         
         return array(
             'loggedOut'  => $loggedOut
         );
     }
-    
 }

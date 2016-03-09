@@ -6,5 +6,5 @@
 namespace Application;
 
 return array(
-    
+    //
 );

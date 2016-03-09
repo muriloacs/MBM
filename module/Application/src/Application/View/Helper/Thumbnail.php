@@ -15,18 +15,18 @@ class Thumbnail extends AbstractHelper
         $containerWidth = $containerDimensions[0];
         $containerHeight = $containerDimensions[1];
         
-        if($pictureHeight == $pictureWidth){
+        if ($pictureHeight == $pictureWidth) {
             $minMeasureContainer = $containerHeight < $containerWidth ? $containerHeight : $containerWidth;
             $finalMeasure = $pictureHeight > $minMeasureContainer ? $minMeasureContainer : $pictureHeight;
             $finalHeight = $finalWidth = $finalMeasure;
         }
-        else{
-            if($pictureHeight > $pictureWidth){
+        else {
+            if ($pictureHeight > $pictureWidth) {
                 $proportion = $pictureHeight/$pictureWidth;
                 $finalHeight = $pictureHeight > $containerHeight ? $containerHeight : $pictureHeight;
                 $finalWidth = $finalHeight/$proportion;
             }
-            else{
+            else {
                 $proportion = $pictureWidth/$pictureHeight;
                 $finalWidth = $pictureWidth > $containerWidth ? $containerWidth : $pictureWidth;
                 $finalHeight = $finalWidth/$proportion;
@@ -34,6 +34,10 @@ class Thumbnail extends AbstractHelper
         }
         $marginTop = ($containerHeight - $finalHeight)/2;
         
-        return "<img src='{$pictureURL}' height='{$finalHeight}' width='{$finalWidth}' style='margin-top:{$marginTop}px' class='img-responsive'>";
+        return "<img src='{$pictureURL}' " .
+                     "height='{$finalHeight}' " .
+                     "width='{$finalWidth}' " .
+                     "style='margin-top:{$marginTop}px' " .
+                     "class='img-responsive'>";
     }
 }

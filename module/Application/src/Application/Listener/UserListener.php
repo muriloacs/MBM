@@ -4,18 +4,23 @@ namespace Application\Listener;
 use Zend\EventManager\ListenerAggregateInterface;
 use Zend\EventManager\EventManagerInterface;
 
-class UserListener implements ListenerAggregateInterface{
-    
+class UserListener implements ListenerAggregateInterface
+{
     private $listeners = array();
 
-    public function attach(EventManagerInterface $events) {
+    public function attach(EventManagerInterface $events)
+    {
         $sharedManager = $events->getSharedManager();
+
+        // Login
         $this->listeners[] = $sharedManager->attach(
             'Application\Service\UserService', 
             'login', 
             array($this, 'login'),
             200
         );
+
+        // Logout
         $this->listeners[] = $sharedManager->attach(
             'Application\Service\UserService', 
             'logout', 
@@ -33,14 +38,15 @@ class UserListener implements ListenerAggregateInterface{
         }
     }
     
-    public function login() {
+    public function login()
+    {
         $path = ROOT_PATH . '/data/cache/UserLogin.txt';
         file_put_contents($path, 'Log in!!!');
     }
     
-    public function logout() {
+    public function logout()
+    {
         $path = ROOT_PATH . '/data/cache/UserLogout.txt';
         file_put_contents($path, 'Log out!!!');
     }
-
 }

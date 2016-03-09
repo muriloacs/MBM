@@ -10,59 +10,71 @@ use Application\Repository\UserRepository;
 
 class UserService implements 
                     ServiceLocatorAwareInterface,
-                    EventManagerAwareInterface{
+                    EventManagerAwareInterface
+{
     
     private $userRepository;
     private $serviceLocator;
     private $eventManager;
 
-    public function __construct(UserRepository $userRepository) {
+    public function __construct(UserRepository $userRepository)
+    {
         $this->userRepository = $userRepository;
     }
 
-    public function getServiceLocator() {
+    public function getServiceLocator()
+    {
         return $this->serviceLocator;
     }
 
-    public function setServiceLocator(ServiceLocatorInterface $serviceLocator) {
+    public function setServiceLocator(ServiceLocatorInterface $serviceLocator)
+    {
         $this->serviceLocator = $serviceLocator;
     }
 
-    public function getEventManager(){
+    public function getEventManager()
+    {
         if (!$this->eventManager) { 
              $this->setEventManager(new EventManager(__CLASS__)); 
         }
         return $this->eventManager;
     }
 
-    public function setEventManager(EventManagerInterface $eventManager) {
+    public function setEventManager(EventManagerInterface $eventManager)
+    {
         $this->eventManager = $eventManager;
     }
 
-    public function find($id){
+    public function find($id)
+    {
         return $this->userRepository->find($id);
     }
     
-    public function insert($entity){
+    public function insert($entity)
+    {
         $this->userRepository->insert($entity);
     }
     
-    public function delete($entity){
+    public function delete($entity)
+    {
         $this->userRepository->delete($entity);
     }
     
-    public function update($entity){
+    public function update($entity)
+    {
         $this->userRepository->update($entity);
     }
 
-    public function login() {
+    public function login()
+    {
         $loggedIn = true;
         $this->getEventManager()->trigger('login', $this, array('loggedIn' => $loggedIn));
         
         return $loggedIn;
     }
 
-    public function logout() {
+    public function logout()
+    {
         $loggedOut = true;
         $this->getEventManager()->trigger('logout', $this, array('loggedOut' => $loggedOut));
         
