@@ -12,7 +12,7 @@ class Base64 extends AbstractHelper
         
         if(!$external){
             // Current module
-            $module = strstr(substr($pictureUrl, 1), '/', true);
+            $module = ucfirst(strstr(substr($pictureUrl, 1), '/', true));
             // Picture file full path
             $picturePath = ROOT_PATH . "/module/$module/public" . $pictureUrl;
             // Base64 encode
