@@ -1,0 +1,247 @@
+* {
+    margin:0px;
+    padding:0px;
+}
+body {
+    background: url("https://www.mercadolivre.com.br/org-img/MLB/design/2014/userficados/Desafio_Userficados/images/bg_body.png") repeat scroll 0 59px rgba(0, 0, 0, 0);
+    margin-top: 75px;
+} 
+#geral {
+    margin-top:1px;
+    position:relative;
+    width:962px;
+    left:50%;
+    top:0px;
+    margin-left:-481px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:16px;
+    color:#333;
+    line-height:20px;
+}
+#corpo {
+    float:left;
+    width:962px;
+}
+
+#ImgDesafio {
+    float:left;
+    position:relative;
+    width:962px;
+    height:471px;
+    background-image:url("https://www.mercadolivre.com.br/org-img/MLB/design/2014/userficados/Desafio_Userficados/images/imagem_desafio.png");
+    text-indent:-999999px;
+    background-position:left top;
+    background-repeat:no-repeat;
+    /*	border:1px solid #CF0; */
+}
+.texto
+{
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:15px;
+    color:#333;
+    line-height:20px;
+}
+#regulamento
+{
+    float:left;
+    position:relative;
+    width:900px;
+    margin-top:35px;
+    margin-bottom:35px;
+}
+#box
+{
+    float:left;
+    position:relative;
+    width:900px;
+    height:197px;
+    background-color:#e3f1f4;
+    margin-bottom:45px;
+}
+.tit_laranja
+{
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:32px;
+    color:#ff8000;
+    line-height:20px;
+}
+.titulo_1
+{
+    float:left;
+    position:relative;
+    width:900px;
+    height:33px;
+    padding:30px 25px 30px 25px;	
+}
+#table
+{
+    float:left;
+    position:absolute;
+    left:0px;
+    top:90px;
+}
+#Vender
+{
+    float:left;
+    position:relative;
+    width:900px;
+    height:150px;
+}		
+#naopercatempo
+{
+    float:left;
+    position:absolute;
+    width:497px;
+    height:100px;
+}
+#bt_Vender a {
+    float: right;
+    position:relative;
+    width:397px;
+    height:77px;
+    background-image:url("https://www.mercadolivre.com.br/org-img/MLB/design/2014/userficados/Desafio_Userficados/images/bt_vender.png");
+    text-indent:-999999px;
+    background-position:left top;
+    background-repeat:no-repeat;
+}
+.texto_2
+{
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:20px;
+    color:#333;
+    line-height:24px;
+}	
+#MaioresInfo
+{
+    float:left;
+    position:relative;
+    width:900px;
+    height:100px;
+    margin-top:10px;
+}		
+#termos
+{
+    float:left;
+    position:absolute;
+    width:225px;
+    height:100px;
+    margin-top:10px;
+}
+#bt_Regulamento a {
+    float: left;
+    position:relative;
+    width:228px;
+    height:44px;
+    margin-left:235px;
+    margin-top:15px;
+    background-image:url("../img/bt_regulamento.png");
+    text-indent:-999999px;
+    background-position:left top;
+    background-repeat:no-repeat;
+}
+#termos_2
+{
+    float:right;
+    position:absolute;
+    width:400px;
+    height:70px;
+    margin-left:480px;
+    margin-top:15px;
+}	
+.texto_3
+{
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:12px;
+    color:#333;
+    line-height:18px;
+}
+.texto_4
+{
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:10px;
+    color:#999;
+    line-height:11px;
+}	
+
+.ml-top{
+    background-color: #FEF047;
+    height: auto;
+    padding: 6px 0;
+}
+.ml-top .ml-top-logo img{
+    /*   width: 90%; 
+       height: auto;*/
+    /*margin-bottom: 10px;*/
+}
+.ml-top .ml-top-search #input-search{
+    height: 40px;
+    border: 1px solid #EAEAEA;
+    border-radius: 0;
+    margin-left: 5px;
+    width: 70%;
+}
+.ml-top .ml-top-search #btn-search{
+    background-color: #3E52A1;
+    background-image: none;
+    border-radius: 0;
+    height: 38px;
+    margin-top: -6px;
+    width: 13%;
+}
+.ml-top .ml-top-search #btn-search:hover{
+    cursor: pointer;
+}
+.ml-top .ml-top-search #btn-search:hover{
+    background-color: #3F4DCA;
+    background-image: none;
+}
+.ml-top .ml-top-actions{
+    margin-top: 10px;
+    padding: 0;
+}
+.ml-top .ml-top-actions .ml-action{
+    border-right: 1px solid #DCCF50;
+    display: inline-block;
+    padding: 5px 14px;
+    width: auto;
+    font-size: 13px;
+    line-height: 10px;
+    color: #333333;
+    font-family: Arial,Helvetica,"Nimbus Sans L",sans-serif;
+}
+.ml-top .ml-top-actions a{
+    color: #716D39;
+    text-decoration: none;
+    font-weight: 200;
+    margin-left: 2%;
+} 
+
+.ml-top .ml-top-actions .ml-last-action{
+    border: 0;
+}
+
+
+#Modal {
+    width:100%;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:16px;
+    color:#333;
+    line-height:24px;
+    /*        background:url(https://www.mercadolivre.com.br/org-img/MLB/design/2014/userficados/Desafio_Userficados/images/bg_body_regulamento.png); 
+            background-repeat: repeat-x;*/
+}
+.tit_laranja
+{
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:20px;
+    color:#ff8000;
+    line-height:25px;
+}
+
+.tit_laranja_2
+{
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:38px;
+    color:#ff8000;
+    line-height:25px;
+}

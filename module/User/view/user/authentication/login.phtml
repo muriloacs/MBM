@@ -1,0 +1,64 @@
+<?php
+$form = $this->form;
+$form->setAttribute('action', "/user/authentication/authenticate?go={$this->url}");
+$form->prepare();
+?>
+<style>body{background-color: #F2F2F2}</style>
+
+<div class="container" style="margin-top: 50px;">
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Login</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <center>
+                                <img src="<?php echo $this->base64('/User/Authentication/img/logo.png'); ?>" style="margin: 15px 0;">
+                            </center>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <center>
+                                <?php echo $this->form()->openTag($form); ?>
+                                <div class="input-group input-group-lg" style="margin-bottom: 3px;">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                                    <?php echo $this->formElement($form->get('username')); ?>
+                                </div>
+                                <div class="input-group input-group-lg">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+                                    <?php echo $this->formElement($form->get('password')); ?>
+                                    <span class="input-group-btn">
+                                        <?php echo $this->formElement($form->get('submit')); ?>
+                                    </span>
+                                </div>
+
+                                <?php echo $this->form()->closeTag(); ?>
+                            </center>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <center>
+                                <?php if ($this->messages) : ?>
+                                    <div class="alert alert-danger" style="margin: 15px 0;">
+                                        <ul>
+                                            <?php foreach ($this->messages as $message) : ?>
+                                                <li><?php echo $message; ?></li>
+                                            <?php endforeach; ?>
+                                        </ul>
+                                    </div>
+                                <?php endif; ?>
+                            </center>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</div>

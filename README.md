@@ -75,3 +75,13 @@ project and you should be ready to go! It should look something like below:
             Allow from all
         </Directory>
     </VirtualHost>
+
+
+
+
+    CREATE TABLE `mbm`.`mbm_user` (
+      `id` INT NOT NULL AUTO_INCREMENT COMMENT '',
+      `username` VARCHAR(255) NOT NULL COMMENT '',
+      `password` VARCHAR(255) NOT NULL COMMENT '',
+      PRIMARY KEY (`id`)  COMMENT '');
+
