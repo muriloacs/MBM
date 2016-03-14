@@ -19,6 +19,11 @@ class IndexController extends AbstractActionController
         return new ViewModel();
     }
 
+    public function adminAction()
+    {
+        return new ViewModel();
+    }
+
     public function pbxAction()
     {
         return new ViewModel();
