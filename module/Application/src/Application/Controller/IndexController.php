@@ -24,7 +24,7 @@ class IndexController extends AbstractActionController
         return new ViewModel();
     }
 
-    public function cdrAction()
+    public function monitorAction()
     {
         return new ViewModel();
     }
