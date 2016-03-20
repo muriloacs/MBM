@@ -10,6 +10,7 @@ class AuthenticationController extends AbstractActionController
 {
     protected $authService;
     protected $form;
+    protected $defaultUrl = "/dashboard";
     
     public function __construct(AuthenticationService $authService, Form $form) 
     {
@@ -20,7 +21,7 @@ class AuthenticationController extends AbstractActionController
     public function loginAction()
     {
         $url = $this->params()->fromQuery('go');
-        $url = (!$url) ? '/' : $this->params()->fromQuery('go');
+        $url = (!$url) ? $this->defaultUrl : $this->params()->fromQuery('go');
         
         if ($this->authService->hasIdentity()) {
             return $this->redirect()->toUrl($url);
@@ -46,23 +47,24 @@ class AuthenticationController extends AbstractActionController
     {
         $request = $this->getRequest();
         $url = $this->params()->fromQuery('go');
+        $url = (!$url) ? $this->defaultUrl : $this->params()->fromQuery('go');
         
         if ($request->isPost()) {
             $this->form->setData($request->getPost());
             if ($this->form->isValid()) {
                 //check authentication...
                 $this->authService->getAdapter()
-                                        ->setIdentity($request->getPost('username'))
+                                        ->setIdentity($request->getPost('email'))
                                         ->setCredential($request->getPost('password'));
                                         
                 $result = $this->authService->authenticate();
-                foreach($result->getMessages() as $message) {
+                foreach ($result->getMessages() as $message) {
                     //save message temporary into flashmessenger
                     $this->flashmessenger()->addMessage($message);
                 }
                  
                 if ($result->isValid()) {
-                    $this->authService->getStorage()->write($request->getPost('username'));
+                    $this->authService->getStorage()->write($request->getPost('email'));
                     return $this->redirect()->toUrl($url);
                 }
             }

@@ -1,12 +1,13 @@
 <?php
-namespace Application\Service;
+
+namespace User\Service;
 
 use Zend\ServiceManager\ServiceLocatorAwareInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
 use Zend\EventManager\EventManager;
 use Zend\EventManager\EventManagerAwareInterface;
 use Zend\EventManager\EventManagerInterface;
-use Application\Repository\UserRepository;
+use User\Repository\UserRepository;
 
 class UserService implements 
                     ServiceLocatorAwareInterface,

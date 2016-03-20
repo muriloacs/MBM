@@ -19,6 +19,11 @@ class Module implements
         $eventManager = $e->getApplication()->getEventManager();
         $moduleRouteListener = new ModuleRouteListener();
         $moduleRouteListener->attach($eventManager);
+
+        // User Listener
+        $eventManager->attach(
+            new Listener\UserListener()
+        );
     }
 
     public function getConfig()

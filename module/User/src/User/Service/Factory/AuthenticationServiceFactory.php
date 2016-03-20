@@ -17,7 +17,7 @@ class AuthenticationServiceFactory implements FactoryInterface
         $dbAdapter = new \Zend\Db\Adapter\Adapter($config['db']);	
 
         // Definindo autenticação por tabela de banco de dados
-       	$adapter = new \Zend\Authentication\Adapter\DbTable($dbAdapter, 'mbm_user', 'username', 'password', 'MD5(?)');
+       	$adapter = new \Zend\Authentication\Adapter\DbTable($dbAdapter, 'mbm_user', 'email', 'password', 'MD5(?)');
 
         // Instaciando o serviço de autenticação
         $auth = new AuthenticationService();

@@ -6,6 +6,7 @@ return array(
         'DoctrineModule',
         'DoctrineORMModule',
         'AssetManager',
+        'Middleware',
 
         // My Modules
         'Application',

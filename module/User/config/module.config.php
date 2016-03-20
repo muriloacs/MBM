@@ -6,6 +6,17 @@ return array(
     // Rotas
     'router' => array(
         'routes' => array(
+            'home' => array(
+                'type'    => 'Literal',
+                'options' => array(
+                    'route'    => '/',
+                    'defaults' => array(
+                        '__NAMESPACE__' => 'User\Controller',
+                        'controller'    => 'Authentication',
+                        'action'        => 'login',
+                    )
+                )
+            ),
             'user' => array(
                 'type' => 'Literal',
                 'options' => array(
@@ -136,7 +147,7 @@ return array(
         'driver' => 'Mysqli',
         'database' => 'mbm',
         'username' => 'root',
-        'password' => 'muk10502',
+        'password' => '123',
         'hostname' => '127.0.0.1',
         'port' => '3306',
         'charset' => 'utf8',

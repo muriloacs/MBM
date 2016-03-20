@@ -20,15 +20,17 @@ class Module implements
                 Feature\ServiceProviderInterface,
                 Feature\ControllerProviderInterface,
                 Feature\ViewHelperProviderInterface,
-                Feature\ValidatorProviderInterface{
+                Feature\ValidatorProviderInterface
+{
 
-    public function onBootstrap(MvcEvent $e) {
+    public function onBootstrap(MvcEvent $e)
+    {
         $eventManager = $e->getApplication()->getEventManager();
         $moduleRouteListener = new ModuleRouteListener();
         $moduleRouteListener->attach($eventManager);
         
         // Defining a different layout for each module
-        $e->getApplication()->getEventManager()->getSharedManager()->attach('Zend\Mvc\Controller\AbstractActionController', 'dispatch', function($e){
+        $e->getApplication()->getEventManager()->getSharedManager()->attach('Zend\Mvc\Controller\AbstractActionController', 'dispatch', function($e) {
             $controller = $e->getTarget();
             $controllerClass = get_class($controller);
             $moduleNamespace = substr($controllerClass, 0, strpos($controllerClass, '\\'));
@@ -37,35 +39,35 @@ class Module implements
                 $controller->layout($config['module_layouts'][$moduleNamespace]);
             }
         }, 100); 
-
-        // This is how you define a listener to a given event
-        $eventManager->attach(
-                new \Application\Listener\UserListener()
-        );
     }
 
-    public function getConfig() {
+    public function getConfig()
+    {
         return include __DIR__ . '/config/module.config.php';
     }
 
-    public function getAutoloaderConfig() {
+    public function getAutoloaderConfig()
+    {
         return include __DIR__ . '/config/autoloader.config.php';
     }
 
-    public function getServiceConfig() {
+    public function getServiceConfig()
+    {
         return include __DIR__ . '/config/service.config.php';
     }
     
-    public function getControllerConfig() {
+    public function getControllerConfig()
+    {
         return include __DIR__ . '/config/controller.config.php';
     }
     
-    public function getViewHelperConfig() {
+    public function getViewHelperConfig()
+    {
         return include __DIR__ . '/config/view-helper.config.php';
     }
     
-    public function getValidatorConfig() {
+    public function getValidatorConfig()
+    {
         return include __DIR__ . '/config/validator.config.php';
     }
-
 }

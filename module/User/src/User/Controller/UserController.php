@@ -1,8 +1,9 @@
 <?php
-namespace Application\Controller;
+
+namespace User\Controller;
  
 use Zend\Mvc\Controller\AbstractActionController;
-use Application\Service\UserService;
+use User\Service\UserService;
  
 class UserController extends AbstractActionController
 {
