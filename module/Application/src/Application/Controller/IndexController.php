@@ -16,21 +16,45 @@ class IndexController extends AbstractActionController
 {
     public function indexAction()
     {
+        $auth = $this->getServiceLocator()->get('authentication-service');
+
+        if (!$auth->hasIdentity()) {
+            return $this->redirect()->toUrl('/login');
+        }
+
         return new ViewModel();
     }
 
     public function adminAction()
     {
+        $auth = $this->getServiceLocator()->get('authentication-service');
+
+        if (!$auth->hasIdentity()) {
+            return $this->redirect()->toUrl('/login');
+        }
+
         return new ViewModel();
     }
 
     public function pbxAction()
     {
+        $auth = $this->getServiceLocator()->get('authentication-service');
+
+        if (!$auth->hasIdentity()) {
+            return $this->redirect()->toUrl('/login');
+        }
+
         return new ViewModel();
     }
 
     public function monitorAction()
     {
+        $auth = $this->getServiceLocator()->get('authentication-service');
+
+        if (!$auth->hasIdentity()) {
+            return $this->redirect()->toUrl('/login');
+        }
+
         return new ViewModel();
     }
 }

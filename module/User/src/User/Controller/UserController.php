@@ -16,6 +16,12 @@ class UserController extends AbstractActionController
     
     public function loginAction()
     {
+        $auth = $this->getServiceLocator()->get('authentication-service');
+
+        if (!$auth->hasIdentity()) {
+            return $this->redirect()->toUrl('/login');
+        }
+
         $loggedIn = $this->userService->login();
         
         return array(
@@ -25,6 +31,12 @@ class UserController extends AbstractActionController
 
     public function logoutAction()
     {
+        $auth = $this->getServiceLocator()->get('authentication-service');
+
+        if (!$auth->hasIdentity()) {
+            return $this->redirect()->toUrl('/login');
+        }
+
         $loggedOut = $this->userService->logout();
         
         return array(
